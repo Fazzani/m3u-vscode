@@ -1,0 +1,34 @@
+{
+    "name": "m3u",
+    "displayName": "m3u",
+    "description": "m3u grammer",
+    "publisher": "synker",
+    "repository": {"url": "https://github.com/fazzani/m3u-vscode"},
+    "icon": "m3u.png",
+    "author": {
+        "email": "heni.fazzani@gmail.com",
+        "name": "Fazzani",
+        "url": "https://fazzani.synker.ovh/"
+    },
+    "keywords": ["m3u", "vscode", "syntax"],
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "m3u",
+            "aliases": ["m3u"],
+            "extensions": ["m3u"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "m3u",
+            "scopeName": "source.pl",
+            "path": "./syntaxes/m3u.tmLanguage.json"
+        }]
+    }
+}

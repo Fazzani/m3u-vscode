@@ -1,0 +1,56 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "m3u",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#name"
+	},
+	 {
+     "include": "#url"
+   }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.m3u",
+          "match": "(#EXTM3U|#EXTINF:|#EXTREM)"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.m3u",
+      "begin": "\"",
+      "end": "\""
+    },
+    "paren-expression": {
+      "begin": "#EXTINF",
+      "end": ",",
+      "name": "expression.group",
+      "patterns": [{ "include": "#keywords" }, { "include": "#strings" }]
+    },
+    "name": {
+      "patterns": [
+        {
+          "name": "entity.name.function",
+          "match": ",(.+)$"
+        }
+      ]
+	},
+	"url": {
+      "patterns": [
+        {
+          "name": "entity.name.type",
+          "match": "^(?!#).+"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.pl"
+}
